@@ -1,0 +1,264 @@
+:: DO NOT EDIT ANY OF THE SOURCE CODE! PROGRAM MAY BREAK!
+@echo off
+chcp 65001 >nul
+COLOR %color%
+title projectxml
+:login
+cls
+echo.
+echo.
+echo       ┌─┐┬─┐┌─┐ ┬┌─┐┌─┐┌┬┐vSECRET
+echo       ├─┘├┬┘│ │ │├┤ │   │ 
+echo       ┴  ┴└─└─┘└┘└─┘└─┘ ┴ 
+echo      press any key to login
+echo.
+pause >nul
+cls
+echo.
+echo.
+echo       ┌─┐┬─┐┌─┐ ┬┌─┐┌─┐┌┬┐vSECRET
+echo       ├─┘├┬┘│ │ │├┤ │   │ 
+echo       ┴  ┴└─└─┘└┘└─┘└─┘ ┴ 
+echo            enter key
+echo.
+set /p p=" key> "
+if %p%==JDAXVGQSF GOTO menu
+if not %p%==JDAXVGQSF GOTO fail
+:menu
+cls
+echo.
+echo ┌───────Choose a Option────────┐
+echo │ 1) Web                       │
+echo │ 2) What's my Ip?             │
+echo │ 3) ADMIN                     │
+echo │ 4) Settings                  │
+echo │ 5) Updates                   │
+echo │ 6) Credits                   │   
+echo │ 7) Add                       │
+echo │ 8) Add++                     │                 
+echo │ 9) Quit                      │
+echo └──────────────────────────────┘
+echo.
+set /p c="> "
+if %c%==1 GOTO web
+if %c%==2 GOTO ip
+if %c%==3 GOTO adminPass
+if %c%==4 GOTO settings
+if %c%==5 GOTO updates
+if %c%==6 GOTO credits
+if %c%==7 GOTO add
+if %c%==8 GOTO add++
+if %c%==9 GOTO quit
+
+:web
+cls
+echo.
+echo Type in a website you would like to open!
+echo.
+echo Website's to choose from.
+echo ─────────────────────────
+echo google
+echo youtube
+echo roblox
+echo twitter
+echo instagram
+echo tiktok
+echo discord
+echo ─────────────────────────
+echo %webName%
+echo ─────────────────────────
+echo more coming soon.
+echo.
+set /p w="> "
+if %w%==google start www.google.com
+if %w%==youtube start www.youtube.com
+if %w%==roblox start www.roblox.com
+if %w%==twitter start www.twitter.com
+if %w%==instagram start www.instagram.com
+if %w%==tiktok start www.tiktok.com
+if %w%==discord start www.discord.com
+if %w%==%webName% start %webURL%
+exit
+
+:add
+cls
+echo      Welcome to Add
+echo.
+echo Press any key to continue
+pause >nul
+cls
+echo     CHOOSE A OPTION
+echo.
+echo 1) Add custom website
+echo 2) Return to menu
+set /p q="> "
+if %q%==1 goto add_web
+if %q%==2 GOTO menu
+
+:add++
+cls
+echo Coming Soon...
+timeout 5 >nul
+GOTO menu
+
+:add_web
+cls
+echo Type in the name of you're website(Example: yourewebsite)
+echo.
+set /p webName=
+cls
+echo Now type in the URL of you're website(Example: www.yourewebsite.com)
+set /p webURL=
+cls
+echo Press any key to go to the Website opener!
+pause >nul
+GOTO web
+
+:ip
+cls
+echo Find the IPV4 to find you're ip!
+timeout 2 >nul
+ipconfig /all
+echo.
+echo Return to menu? (y)
+set /p o="> "
+if %o%==y GOTO menu
+
+:adminPass
+cls
+echo.
+echo Enter Admin Password
+echo.
+set /p ap="> "
+if %ap%==projectMariusADMIN GOTO admin
+if not %ap%==projectMariusADMIN GOTO adminFail
+
+:settings
+cls
+echo   Settings
+echo 1) Change color
+echo 2) Return to menu
+set /p a="> "
+if %a%==1 GOTO ColorS
+if %a%==2 GOTO menu
+
+:fail
+cls
+echo Key Incorrect.
+timeout 2 >nul
+cls
+echo Redirecting to login in 1..
+timeout 1 >nul
+cls
+echo Redirecting to login in 2..
+timeout 1 >nul
+cls
+echo Redirecting to login in 3..
+timeout 1 >nul
+GOTO login
+:error
+cls
+echo A Error has occured...
+timeout 2 >nul
+exit
+
+:adminFail
+cls
+echo Admin password Incorrect.
+timeout 2 >nul
+cls
+echo Redirecting to login in 1..
+timeout 1 >nul
+cls
+echo Redirecting to login in 2..
+timeout 1 >nul
+cls
+echo Redirecting to login in 3..
+timeout 1 >nul
+GOTO menu
+
+:admin
+cls
+echo coming soon!
+timeout 2 >nul
+GOTO menu
+
+:ColorS
+cls
+echo.
+echo   Change Color!
+echo.
+echo.
+echo (1)Blue
+echo (2)Green
+echo (3)Aqua
+echo (4)Red
+echo (5)Purple
+echo (6)Yellow
+echo (7)White
+echo (8)Gray
+echo (9)Light Blue
+echo.
+set /p color=
+pause
+cls
+color %color%
+echo COLOR CHANGED
+echo Press any key to return to menu
+pause >nul
+GOTO menu
+
+:quit
+cls
+echo Are you sure you want to quit?(yes or no)
+set /p i="> "
+if %i%==yes exit
+if %i%==y exit
+if %i%==no GOTO menu
+if %i%==n GOTO menu
+GOTO error
+
+:updates
+cls
+echo Added Updates
+echo.
+echo -Added more websites
+echo -Added Admin
+echo.
+echo Return to menu?
+set /p y="> "
+if %y%==yes GOTO menu
+if %y%==y GOTO menu
+if not %y%==y GOTO error
+if not %y%==yes GOTO error
+
+
+:credits
+cls
+echo Credits!
+echo.
+echo Programmer: Maggio
+echo UI: Maggio
+echo Owner: Maggio
+echo Everything is by me :)
+echo.
+echo Press any key to return to menu!
+pause >nul
+GOTO menu
+
+:help
+cls
+echo Select what you need help with.
+echo.
+echo 1) Key
+echo.
+set /p option="> "
+if %option%==1 GOTO key_help
+
+:key_help
+cls
+echo Defualt Key is "projectKey"
+echo.
+echo Press any key to return to login
+pause >nul
+GOTO login
